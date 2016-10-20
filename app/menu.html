@@ -69,13 +69,13 @@
             </div>
         </div>
     </div>
-<!--	**************************************-->
+<!--	**********************************************************************-->
 	<script src="../bower_components/angular/angular.min.js"></script>
 	<script>
 		var app = angular.module('confusionApp',[]);
 		app.controller('menuController',function(){
 			var dishes=[
-              {		
+              {
                 name:'Uthapizza',
                 image: 'images/uthapizza.png',
                 category: 'mains',
@@ -113,11 +113,11 @@
                }
               ]
 			this.dishes = dishes;
-			// ************************************************************************************
+			// ***********************************************************************
 			this.tab = 1;
 			this.select = function(setTab)	{
 				this.tab = setTab;
-				
+
 				this.filtText = '';
 				if (setTab === 2)
           this.filtText = "appetizer";
@@ -128,11 +128,12 @@
         else
           this.filtText = "";
 			}
+      // ***********************************************************************
 			this.isSelected = function (checkTab) {
-				return(this.tab === checkTab);
+				return(this.tab === checkTab); //return true or false to the class
 			}
-				// ***********************************************************************************
-			
+				// *********************************************************************
+
 		});
 	</script>
 </body>
