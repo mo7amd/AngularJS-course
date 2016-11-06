@@ -54,9 +54,9 @@
                     <ul class="list-unstyled" ng-show="!commentForm.yourname.$pristine">
 						<div class="media-body">
                           <blockquote>
-                            <p>Rating {{comm.rate}}</p>
-                            <p>{{comm.comment}}</p>
-                            <footer>{{comm.firstName}}, {{comm.date | date : 'MMM. d, y'}}</footer>
+                            <p>Rating {{mycomment.rating}}</p>
+                            <p>{{mycomment.comment}}</p>
+                            <footer>{{mycomment.author}}, {{mycomment.date | date : 'MMM. d, y'}}</footer>
                           </blockquote>
                         </div>
                     </ul>
@@ -66,7 +66,7 @@
                         <label for="yourname" class="col-sm-2 control-label">Your Name</label>
                         <div class="col-sm-10">
                         <input type="text" class="form-control" id="yourname" name="yourname" placeholder="Enter Your Name"
-                        ng-model="comm.firstName" required>
+                        ng-model="mycomment.author" required>
 						<span ng-show="commentForm.yourname.$error.required && !commentForm.yourname.$pristine" class="help-block">Your name is required.</span>
                         </div>
                     </div>
@@ -76,19 +76,19 @@
                             </div>
                             <div class="col-sm-10">
                                 <span style="padding:10px;">
-                                    <input type="radio" name="stars" value="1" ng-model="comm.rate"> 1</input>
+                                    <input type="radio" name="stars" value="1" ng-model="mycomment.rating"> 1</input>
                                 </span>
                                 <span style="padding:10px;">
-                                    <input type="radio" name="stars" value="2" ng-model="comm.rate"> 2</input>
+                                    <input type="radio" name="stars" value="2" ng-model="mycomment.rating"> 2</input>
                                 </span>
                                 <span style="padding:10px;">
-                                    <input type="radio" name="stars" value="3" ng-model="comm.rate"> 3</input>
+                                    <input type="radio" name="stars" value="3" ng-model="mycomment.rating"> 3</input>
                                 </span>
                                 <span style="padding:10px;">
-                                    <input type="radio" name="stars" value="4" ng-model="comm.rate"> 4</input>
+                                    <input type="radio" name="stars" value="4" ng-model="mycomment.rating"> 4</input>
                                 </span>
                                 <span style="padding:10px;">
-                                    <input type="radio" name="stars" value="5"  ng-model="comm.rate"> 5</input>
+                                    <input type="radio" name="stars" value="5"  ng-model="mycomment.rating"> 5</input>
                                 </span>
 
                             </div>
@@ -96,7 +96,7 @@
 					<div class="form-group" ng-class="{ 'has-error' : commentForm.comment.$error.required && !commentForm.comment.$pristine }">
                         <label for="comment" class="col-sm-2 control-label">Your Comment</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="12" id="comment" name="comment" ng-model="comm.comment" required></textarea>
+                            <textarea class="form-control" rows="12" id="comment" name="comment" ng-model="mycomment.comment" required></textarea>
 							<span ng-show="commentForm.comment.$error.required && !commentForm.comment.$pristine" class="help-block">Your comment is required.</span>
                         </div>
                     </div>
