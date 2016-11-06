@@ -16,7 +16,7 @@
                      aria-controls="appetizers"
                      role="tab">Appetizers</a></li>
                     <li role="presentation"
-                     ng-class="{active:isSelected(3)}">
+                       ng-class="{active:isSelected(3)}">
                     <a ng-click="select(3)"
                      aria-controls="mains"
                      role="tab">Mains</a></li>
@@ -30,10 +30,10 @@
 								<ul class="media-list tab-pane fade in active">
 									<li class="media" ng-repeat="dish in dishes | filter:filtText">
                     <div class="media-left media-middle">
-                        <a ng-href="#/menu/{{dish._id}}">
-                        <img class="media-object img-thumbnail"
-                         ng-src={{dish.image}} alt="Uthappizza">
-                        </a>
+                      <a ui-sref="app.dishdetails({id: dish.id})">
+                      <img class="media-object img-thumbnail"
+                      ng-src={{dish.image}} alt="Uthappizza">
+                      </a>
                     </div>
                     <div class="media-body">
                         <h2 class="media-heading">{{dish.name}}
